@@ -1,11 +1,26 @@
-import { BOOKS, BOOKS_HEADING } from '../content'
-import { covers } from '../assets'
+import { BOOKS, BOOKS_HEADING, QUOTE } from '../content'
+import { covers, mountainsImg } from '../assets'
 import WheatSprig from './WheatSprig'
 
+/**
+ * "Her Books" and the closing quote share a single section so the misty
+ * mountain photo (materials/cyndee2 (1).jfif) reads as one continuous
+ * backdrop behind both.
+ */
 export default function Books() {
   return (
-    <section id="books" className="relative bg-cream py-16 lg:py-24">
-      <div className="mx-auto max-w-site px-6 lg:px-10">
+    <section id="books" className="relative overflow-hidden py-16 lg:py-24">
+      {/* Shared backdrop */}
+      <img
+        src={mountainsImg}
+        alt="A misty mountain road winding through rocky terrain"
+        className="absolute inset-0 h-full w-full object-cover object-center"
+      />
+      {/* Legibility wash — denser over the books, lighter toward the quote */}
+      <div className="absolute inset-0 bg-gradient-to-b from-cream/92 via-cream/74 to-cream/58" />
+
+      <div className="relative mx-auto max-w-site px-6 lg:px-10">
+        {/* Her Books */}
         <div className="flex flex-col items-center">
           <h2 className="font-display text-[1.7rem] font-semibold uppercase tracking-[0.16em] text-gold lg:text-[2rem]">
             {BOOKS_HEADING}
@@ -45,6 +60,18 @@ export default function Books() {
             </div>
           ))}
         </div>
+
+        {/* Closing quote */}
+        <figure className="mx-auto mt-20 max-w-2xl text-center lg:mt-28">
+          <blockquote className="font-display text-[1.7rem] italic leading-snug text-ink drop-shadow-[0_1px_10px_rgba(241,239,236,0.85)] sm:text-4xl">
+            {QUOTE}
+          </blockquote>
+          <figcaption className="mt-6 flex items-center justify-center gap-4 text-gold">
+            <span className="h-px w-20 bg-current sm:w-28" />
+            <WheatSprig className="h-6 w-20 flex-none" />
+            <span className="h-px w-20 bg-current sm:w-28" />
+          </figcaption>
+        </figure>
       </div>
     </section>
   )

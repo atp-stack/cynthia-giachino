@@ -2,7 +2,6 @@ import Header from './components/Header'
 import Hero from './components/Hero'
 import About from './components/About'
 import Books from './components/Books'
-import Quote from './components/Quote'
 import Footer from './components/Footer'
 
 export default function App() {
@@ -13,7 +12,6 @@ export default function App() {
         <Hero />
         <About />
         <Books />
-        <Quote />
       </main>
       <Footer />
     </div>
