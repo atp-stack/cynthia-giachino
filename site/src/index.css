@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 96px;
+  }
+  body {
+    @apply bg-cream font-sans text-ink-soft antialiased;
+  }
+}
+
+@layer components {
+  /* Small-caps eyebrow / section label */
+  .eyebrow {
+    @apply font-display uppercase tracking-eyebrow text-gold;
+  }
+  /* Short gold underline rule beneath headings */
+  .gold-rule {
+    @apply block h-px w-16 bg-gold;
+  }
+  .btn-gold {
+    @apply inline-block bg-gold px-8 py-3 font-sans text-xs font-bold uppercase
+      tracking-button text-white transition-colors duration-200
+      hover:bg-gold-deep;
+  }
+}
+
+/* Vite default reset supplements */
+* {
+  box-sizing: border-box;
+}
+img {
+  max-width: 100%;
+  display: block;
+}
