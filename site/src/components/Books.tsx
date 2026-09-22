@@ -46,7 +46,12 @@ export default function Books() {
                   <p className="mt-4 font-sans text-sm leading-6 text-ink-soft">
                     {book.blurb}
                   </p>
-                  <a href="#contact" className="btn-gold mt-5 !px-6 !py-2.5 !tracking-nav">
+                  <a
+                    href={book.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-gold mt-5 !px-6 !py-2.5 !tracking-nav"
+                  >
                     {book.cta}
                   </a>
                 </div>

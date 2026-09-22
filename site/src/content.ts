@@ -40,12 +40,14 @@ export const BOOKS = [
     title: 'QUIET. FEAR.',
     blurb: 'True Story of Survival, Resilience, and Confronting the Unknown.',
     cta: 'LEARN MORE',
+    href: 'https://www.amazon.com/Quiet-Fear-Autobiographical-Cynthia-Giachino/dp/1959450395/ref=tmm_hrd_swatch_0?_encoding=UTF8&sr=8-1',
   },
   {
     id: 'between-lines',
     title: 'BETWEEN LINES',
     blurb: 'One Woman, One Man, One Scam—And a Decision that will Change Both.',
     cta: 'LEARN MORE',
+    href: 'https://www.amazon.com/Between-Lines-Cynthia-J-Giachino/dp/B0FPR6QMYL/ref=tmm_hrd_swatch_0',
   },
 ] as const
 
