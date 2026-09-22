@@ -4,6 +4,8 @@ dist-ssr
 *.local
 .DS_Store
 *.tsbuildinfo
+.env
+.vercel
 
 # stray invoice doc, not a design asset
 materials/INV-*.doc

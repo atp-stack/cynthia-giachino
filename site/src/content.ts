@@ -10,7 +10,7 @@ export const NAV_LINKS = [
 export const SOCIAL = {
   facebook: 'https://www.facebook.com/',
   instagram: 'https://www.instagram.com/',
-  email: 'mailto:hello@cynthiagiachino.com',
+  email: 'mailto:authorservices@page-and-pixel.com',
 } as const
 
 export const HERO = {
@@ -58,5 +58,20 @@ export const BOOKS = [
 ] as const
 
 export const QUOTE = 'No matter where you start, resilience can take you anywhere.'
+
+export const CONTACT = {
+  heading: 'CONTACT',
+  intro:
+    'Have a question, an event or media inquiry, or just want to say hello? Send a message below — Cynthia’s team will get back to you soon.',
+  fields: {
+    name: 'Name',
+    email: 'Email',
+    message: 'Message',
+  },
+  cta: 'SEND MESSAGE',
+  sending: 'SENDING…',
+  success: 'Thank you — your message has been sent.',
+  error: 'Something went wrong sending your message. Please try again, or email us directly at',
+}
 
 export const FOOTER_COPY = '© 2026 Cynthia J. Giachino. All Rights Reserved.'

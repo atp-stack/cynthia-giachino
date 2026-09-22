@@ -9,7 +9,7 @@ const socials = [
 
 export default function Footer() {
   return (
-    <footer id="contact" className="bg-footer-purple text-white">
+    <footer className="bg-footer-purple text-white">
       <div className="mx-auto flex max-w-site flex-col items-center gap-4 px-6 py-6 sm:flex-row sm:justify-between lg:px-10">
         <p className="font-sans text-xs tracking-wide text-white/90">{FOOTER_COPY}</p>
         <div className="flex items-center gap-5">

@@ -14,9 +14,11 @@ npm run preview
 ```
 
 ## Structure
-- `src/content.ts` — all copy (verbatim from the approved layout)
+- `src/content.ts` — all copy (verbatim from the approved layout, plus the Contact section)
 - `src/assets/` — imagery copied from `../materials/`
-- `src/components/` — `Header`, `Hero`, `About`, `Books`, `Quote`, `Footer`, `WheatSprig`
+- `src/components/` — `Header`, `Hero`, `About`, `Books` (includes the closing quote),
+  `Contact`, `Footer`, `WheatSprig`
+- `api/contact.ts` — Vercel serverless function that emails contact-form submissions
 - `tailwind.config.js` — palette + font tokens (single source of truth)
 
 ---
@@ -82,3 +84,48 @@ Uppercase + letter-spacing is preserved on nav, labels, and buttons via Tailwind
 
 Alternatives if the author prefers: Playfair Display (higher contrast) or EB Garamond
 in place of Cormorant; Montserrat or Jost in place of Lato.
+
+---
+
+## Contact form — setup required before it can send mail
+
+The `#contact` section (`src/components/Contact.tsx`) posts to a Vercel serverless
+function, `api/contact.ts`, which emails the submission out through Gmail's SMTP
+server using `nodemailer`. It ships with:
+
+- Client + server-side validation (name / valid email / non-empty message)
+- A hidden honeypot field to deflect basic bots
+- Inline success/error states in the form (the error state also offers a mailto
+  fallback to `CONTACT_TO`)
+
+**It will not send anything until three environment variables are set in Vercel**
+(Project → Settings → Environment Variables):
+
+| Variable | Value | Required |
+|---|---|---|
+| `GMAIL_USER` | The Gmail or Google Workspace address that sends the mail (e.g. an `@gmail.com` login, or a Workspace address on a custom domain — both work the same way) | Yes |
+| `GMAIL_APP_PASSWORD` | A 16-character **App Password** for that account (not the normal login password) | Yes |
+| `CONTACT_TO` | Inbox the messages should land in. Defaults to `GMAIL_USER` if omitted | No — set to `authorservices@page-and-pixel.com` if that inbox differs from `GMAIL_USER` |
+
+### Generating the App Password
+1. On the sending account, turn on **2-Step Verification**: myaccount.google.com/security
+2. Then open **myaccount.google.com/apppasswords**, create one named e.g. "Author
+   site contact form", and copy the 16-character password it gives you (spaces don't
+   matter, the code strips them either way).
+3. In Vercel: **Settings → Environment Variables** → add `GMAIL_USER` and
+   `GMAIL_APP_PASSWORD` (and `CONTACT_TO` if needed) for Production (and Preview, if
+   you want the form to work on preview deploys too).
+4. Redeploy.
+
+> `authorservices@page-and-pixel.com` was given as the delivery inbox. If that address
+> is itself hosted on Google (Google Workspace), it can be used directly as
+> `GMAIL_USER` — generate the App Password on that account. If it's hosted elsewhere,
+> use a real `@gmail.com` account as `GMAIL_USER` and set `CONTACT_TO` to
+> `authorservices@page-and-pixel.com`; the form will send *from* the Gmail account but
+> *to* that inbox.
+
+### Local testing
+`vite dev` does not run `/api` routes — you'll see the form's error state (with the
+mailto fallback) if you submit locally with plain `npm run dev`, which is expected.
+To test the real send path locally: `npm i -g vercel`, copy `.env.example` to `.env`
+and fill it in, then run `vercel dev`.
