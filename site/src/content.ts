@@ -36,15 +36,15 @@ export const BOOKS_HEADING = 'HER BOOKS'
 
 export const BOOKS = [
   {
-    id: 'between-lines',
-    title: 'BETWEEN LINES',
-    blurb: 'One Woman, One Man, One Scam—And a Decision that will Change Both.',
-    cta: 'LEARN MORE',
-  },
-  {
     id: 'quiet-fear',
     title: 'QUIET. FEAR.',
     blurb: 'True Story of Survival, Resilience, and Confronting the Unknown.',
+    cta: 'LEARN MORE',
+  },
+  {
+    id: 'between-lines',
+    title: 'BETWEEN LINES',
+    blurb: 'One Woman, One Man, One Scam—And a Decision that will Change Both.',
     cta: 'LEARN MORE',
   },
 ] as const
