@@ -35,7 +35,7 @@ export default function Books() {
                 <img
                   src={covers[book.id]}
                   alt={`${book.title} book cover`}
-                  className="w-48 flex-none shadow-[0_22px_45px_-15px_rgba(46,50,59,0.55)] sm:w-56"
+                  className="w-56 flex-none shadow-[0_22px_45px_-15px_rgba(46,50,59,0.55)] sm:w-64"
                   style={{ transform: 'perspective(1100px) rotateY(-6deg)' }}
                 />
                 <div className="max-w-xs text-center sm:text-left">
