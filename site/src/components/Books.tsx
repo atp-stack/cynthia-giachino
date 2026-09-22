@@ -38,13 +38,16 @@ export default function Books() {
                   className="w-56 flex-none shadow-[0_22px_45px_-15px_rgba(46,50,59,0.55)] sm:w-64"
                   style={{ transform: 'perspective(1100px) rotateY(-6deg)' }}
                 />
-                <div className="max-w-xs text-center sm:text-left">
+                <div className="max-w-sm text-center sm:text-left">
                   <h3 className="font-display text-lg font-semibold uppercase tracking-[0.14em] text-gold">
                     {book.title}
                   </h3>
                   <span className="gold-rule mx-auto mt-2 sm:mx-0" />
-                  <p className="mt-4 font-sans text-sm leading-6 text-ink-soft">
+                  <p className="mt-4 font-sans text-sm font-semibold leading-6 text-ink-soft">
                     {book.blurb}
+                  </p>
+                  <p className="mt-3 font-sans text-sm leading-6 text-ink-soft/90">
+                    {book.summary}
                   </p>
                   <a
                     href={book.href}
