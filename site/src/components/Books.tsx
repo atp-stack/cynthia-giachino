@@ -16,8 +16,15 @@ export default function Books() {
         alt="A misty mountain road winding through rocky terrain"
         className="absolute inset-0 h-full w-full object-cover object-center"
       />
-      {/* Legibility wash — denser over the books, lighter toward the quote */}
-      <div className="absolute inset-0 bg-gradient-to-b from-cream/92 via-cream/74 to-cream/58" />
+      {/* Legibility wash — denser toward the bottom (buy buttons + quote sit
+          over the darker rock/road), fading to the photo up top where it's
+          already pale sky. Stays translucent throughout so the photo reads
+          through the whole section. */}
+      {/* NOTE: the `from-*` gradient-stop utility only accepts opacities
+          from Tailwind's default scale (5,10,...,90,95,100) — unlike
+          `via-*`/`to-*`, which take any number. Off-scale values like /88
+          silently produce no CSS at all, so keep this one on-scale. */}
+      <div className="absolute inset-0 bg-gradient-to-t from-cream/90 via-cream/55 to-cream/15" />
 
       <div className="relative mx-auto max-w-site px-6 lg:px-10">
         {/* Her Books */}
