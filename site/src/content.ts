@@ -34,6 +34,8 @@ export const ABOUT = {
 
 export const BOOKS_HEADING = 'HER BOOKS'
 
+export const BUY_LABEL = 'BUY NOW'
+
 export const BOOKS = [
   {
     id: 'quiet-fear',
@@ -42,8 +44,20 @@ export const BOOKS = [
     // Longer summary supplied by the author.
     summary:
       'Cynthia J. Giachino shares her life story in this unique autobiographical novel, Quiet. Fear. The author moves swiftly into retelling her life story. She begins therapy with her psychologist in the year 1986, and moves back to the 1950’s — a time of childhood trauma. Slowly, the threads of love, lies and secrets begin to unravel for the author (Lilly) and her family. This is an unforgettable journey of twists and turns.',
-    cta: 'LEARN MORE',
-    href: 'https://www.amazon.com/Quiet-Fear-Autobiographical-Cynthia-Giachino/dp/1959450395/ref=tmm_hrd_swatch_0?_encoding=UTF8&sr=8-1',
+    links: [
+      {
+        label: 'AMAZON',
+        href: 'https://www.amazon.com/Quiet-Fear-Autobiographical-Cynthia-Giachino/dp/1959450395/ref=tmm_hrd_swatch_0?_encoding=UTF8&sr=8-1',
+      },
+      {
+        label: 'BARNES & NOBLE',
+        href: 'https://www.barnesandnoble.com/w/quiet-fear-cynthia-j-giachino/1151370868?ean=9798997848804',
+      },
+      {
+        label: 'PRINT EDITION',
+        href: 'https://shop.ingramspark.com/b/084?params=31DrEmoblxpLf2JIpcNaP4R3kk4l7Yh87XAXKXfl9FR',
+      },
+    ],
   },
   {
     id: 'between-lines',
@@ -52,8 +66,20 @@ export const BOOKS = [
     // Longer summary supplied by the author.
     summary:
       'Harris, a young Asian American, travels to Bangkok for his first professional job but is kidnapped, sold to a warlord, and forced to work in a scam labor camp. Stripped of his identity, he becomes Ricco R. Smith. Ricco forms a bond with Irene, a retired school teacher living in Chicago publishing her first book, and whom Ricco is scamming. With the help of her friends, Betty and Stella, Irene begins investigating Ricco’s emails, leading them to unforgettable journeys in London and Thailand.',
-    cta: 'LEARN MORE',
-    href: 'https://www.amazon.com/Between-Lines-Cynthia-J-Giachino/dp/B0FPR6QMYL/ref=tmm_hrd_swatch_0',
+    links: [
+      {
+        label: 'AMAZON',
+        href: 'https://www.amazon.com/Between-Lines-Cynthia-J-Giachino/dp/B0FPR6QMYL/ref=tmm_hrd_swatch_0',
+      },
+      {
+        label: 'BARNES & NOBLE',
+        href: 'https://www.barnesandnoble.com/w/between-lines-cynthia-j-giachino/1148189853?ean=9798997848835',
+      },
+      {
+        label: 'PRINT EDITION',
+        href: 'https://shop.ingramspark.com/b/084?params=QLyTQF9mMUUYszW659sfvaNliPDI9pc9oBslv5olgoA',
+      },
+    ],
   },
 ] as const
 

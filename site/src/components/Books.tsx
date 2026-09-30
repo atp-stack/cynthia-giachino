@@ -1,4 +1,4 @@
-import { BOOKS, BOOKS_HEADING, QUOTE } from '../content'
+import { BOOKS, BOOKS_HEADING, BUY_LABEL, QUOTE } from '../content'
 import { covers, mountainsImg } from '../assets'
 import WheatSprig from './WheatSprig'
 
@@ -49,14 +49,22 @@ export default function Books() {
                   <p className="mt-3 font-sans text-sm leading-6 text-ink-soft/90">
                     {book.summary}
                   </p>
-                  <a
-                    href={book.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn-gold mt-5 !px-6 !py-2.5 !tracking-nav"
-                  >
-                    {book.cta}
-                  </a>
+                  <p className="mt-5 font-sans text-xs uppercase tracking-nav text-ink-soft">
+                    {BUY_LABEL}
+                  </p>
+                  <div className="mt-2 flex flex-wrap justify-center gap-2 sm:justify-start">
+                    {book.links.map((link) => (
+                      <a
+                        key={link.label}
+                        href={link.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="btn-gold-outline"
+                      >
+                        {link.label}
+                      </a>
+                    ))}
+                  </div>
                 </div>
               </article>
 
